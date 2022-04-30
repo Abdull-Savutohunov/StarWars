@@ -1,9 +1,9 @@
-const $container = document.querySelector('.container');
+const $container = document.querySelector('.row');
 const $wrapper = document.querySelector('.wrapper');
 const BASE_URL = 'https://swapi.dev/api/'
 let pageCounter =  1
 window.addEventListener('load' , () => {
-    getData(`${BASE_URL}starships` , `page=${pageCounter}` , cb => {
+    getData(`${BASE_URL}starships/` , `page=${pageCounter}` , cb => {
         cardTemplate(cb.results)
     })
 })
@@ -50,7 +50,7 @@ function getSingleData(url){
                 </ul>
                 <button class="back" onclick="goBack()">Go Back</button>
             </div>
-            
+
         `
     })
 }
